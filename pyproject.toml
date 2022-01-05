@@ -8,6 +8,7 @@ authors = ["Vinicius Braga <Vbragadev@gmail.com>"]
 python = "^3.9"
 Django = "^4.0.1"
 gunicorn = "^20.1.0"
+flake8 = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 

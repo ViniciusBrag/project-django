@@ -3,3 +3,7 @@
 
 schedule: ''
 update: false
+
+requirements:
+  - poetry.lock
+  - pyproject.toml

@@ -1,3 +1,4 @@
+
 name: CI
 on:
   pull_request:
@@ -11,11 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [3.9]
-        poetry-version: [1.1.12]
+        poetry-version: [1.1.8]
         mongodb-version: [5.0]
         os: [ubuntu-20.04]
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v2
+      - name: Start MongoDB v${{ matrix.mongodb-version }}
+        uses: supercharge/mongodb-github-action@1.2.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
@@ -25,5 +31,9 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: poetry install
-
-
+      - name: Run tests
+        run: poetry run pytest --cov='.' -v
+      - name: Send report to codecov.io
+        env:
+          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+        run: poetry run codecov

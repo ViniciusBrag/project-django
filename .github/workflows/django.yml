@@ -7,7 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.9]
+        poetry-version: [1.1.12]
 
     runs-on: ubuntu-latest
     strategy:

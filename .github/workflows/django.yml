@@ -31,6 +31,7 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: poetry install
+             cp contrib/env-sample .env 
 
       - name: Test with pytest
         run:  poetry run pytest --cov='.' -v

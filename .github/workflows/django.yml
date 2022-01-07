@@ -31,9 +31,10 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: poetry install
-      - name: Run tests
-        run: poetry run pytest 
-      - name: Send report to codecov.io
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: poetry run codecov  
+      - name: Test with pytest
+        run: poetry run pytest pythondjango --cov=pythondjango 
+      - name: Posting Coverage
+      env:
+        super_secret: ${{ secrets.CODECOV_TOKEN }}
+      run: |
+        poetry run codecov

@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        run: poetry run pytest --cov='.' -v
+        run: poetry run pytest 
       - name: Send report to codecov.io
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}

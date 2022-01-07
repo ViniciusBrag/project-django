@@ -38,5 +38,5 @@ jobs:
       - name: Send report to codecov.io
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: poetry run codeco
+        run: poetry run codecov
 

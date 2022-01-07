@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        run: poetry run pytest --cov=pythondjango
+        run: poetry run pytest 
       - name: Cobertura de testes com codecov
         uses: codecov/codecov-action@v1
         with:

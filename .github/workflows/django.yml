@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        run: poetry run pytest 
-      - name: Send report to codecov.io
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: poetry run codecov  
+        run: poetry run pytest --cov=pythondjango
+      - name: Cobertura de testes com codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

@@ -7,7 +7,6 @@ on:
       - main
 
 jobs:
-  jobs:
   build:
     runs-on: ubuntu-latest
 
@@ -19,7 +18,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports: [ '5432:5432' ]
-        
+
     steps:
       - uses: actions/setup-python@v2
         with:

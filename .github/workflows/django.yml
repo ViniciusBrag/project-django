@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    matrix:
-      python-version: [3.9]
-      poetry-version: [1.1.12]
     services:
       postgres:
         image: postgres:11.5
@@ -20,7 +17,9 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports: ["5432:5432"]
-
+     matrix:
+      python-version: [3.9]
+      poetry-version: [1.1.12]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.9
@@ -48,7 +47,7 @@ jobs:
       - name: Lint with flake8
         run: |
           poetry run flake8 .
-
+          
       - name: Test with pytest
         run: |
           poetry run pytest

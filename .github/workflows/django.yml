@@ -7,16 +7,7 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-     services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports: [ '5432:5432' ]
+  
   ci:
     strategy:
       fail-fast: false
@@ -25,7 +16,15 @@ jobs:
         poetry-version: [1.1.12]
         os: [ubuntu-20.04]
     runs-on: ${{ matrix.os }}
-    
+   services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: [ '5432:5432' ]
+          
     steps:
       - uses: actions/setup-python@v2
         with:

@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+  
     runs-on: ubuntu-latest
 
     services:
@@ -16,5 +17,3 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
           ports: ["5432:5432"]    
-    steps:
-

@@ -5,7 +5,9 @@ on:
     branches:
       - main
 
-jobs: 
+jobs:
+    runs-on: ubuntu-latest
+
     services:
       postgres:
         image: postgres:latest
@@ -14,4 +16,5 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
           ports: ["5432:5432"]    
+    steps:
 

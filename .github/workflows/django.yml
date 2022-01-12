@@ -5,42 +5,13 @@ on:
     branches:
       - main
 
-jobs:
-  ci:
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.9]
-        poetry-version: [1.1.12]
-        os: [ubuntu-20.04]
-    runs-on: ${{ matrix.os }}
-    steps:
-      services:
-        postgres:
-          image: postgres:11.5
-          env:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: postgres
-            POSTGRES_DB: postgres
-          ports: ["5432:5432"]    
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.0.0
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
-      - name: Install dependencies
-        run: poetry install
-
-      - name: Copy config .env
-        run: cp contrib/env-sample .env  
-
-      - name: Test with pytest
-        run:  poetry run pytest --cov='.' -v
-
-      - name: Send report to codecov.io
+jobs: 
+    services:
+      postgres:
+        image: postgres:latest
         env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: poetry run codecov
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+          ports: ["5432:5432"]    
 

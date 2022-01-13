@@ -137,3 +137,7 @@ launch.json
 .idea/
 idea
 idea/
+
+# Media & static files
+staticfiles/
+mediafiles/

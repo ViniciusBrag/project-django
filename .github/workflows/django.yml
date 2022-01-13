@@ -1,34 +1,35 @@
+name: Python application
 
-name: CI
 on:
   pull_request:
-  push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  ci:
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.9]
-        poetry-version: [1.1.12]
-        mongodb-version: [5.0]
-        os: [ubuntu-20.04]
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ["5432:5432"]
+
     steps:
       - uses: actions/checkout@v2
-      - name: Start MongoDB v${{ matrix.mongodb-version }}
-        uses: supercharge/mongodb-github-action@1.2.0
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
         with:
-          mongodb-version: ${{ matrix.mongodb-version }}
-      - uses: actions/setup-python@v2
+          python-version: 3.9
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.0.0
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+
       - name: Install dependencies
         run: poetry install
 
@@ -41,5 +42,4 @@ jobs:
       - name: Send report to codecov.io
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: poetry run codecov
-
+        run: poetry run codecov    

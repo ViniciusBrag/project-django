@@ -1,14 +1,12 @@
-name: CI
+ame: Python application
+
 on:
   pull_request:
-  push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  
+  build:
     runs-on: ubuntu-latest
-
     services:
       postgres:
         image: postgres:latest
@@ -16,4 +14,16 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
-          ports: ["5432:5432"]    
+        ports: ["5432:5432"]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install Dependencies
+        run: |
+          poetry install
+          

@@ -128,10 +128,10 @@ USE_TZ = True
 
 #configuração de ambiente de desenvolvimento
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'media/'
+STATIC_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 AWS_ACESS_KEY_ID=config('AWS_ACESS_KEY_ID')

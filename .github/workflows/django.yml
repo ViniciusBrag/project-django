@@ -1,4 +1,4 @@
-name: Python application
+name: Django Application
 
 on:
   pull_request:

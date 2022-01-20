@@ -9,3 +9,6 @@ AWS_STORAGE_BUCKET_NAME =
 
 #setting django-debug-toolbar
 INTERNAL_IPS=127.0.0.1
+
+#app monitoration errors django
+SENTRY_DSN=

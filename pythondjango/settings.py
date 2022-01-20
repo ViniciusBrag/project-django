@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'pythondjango.wsgi.application'
 INTERNAL_IPS=config('INTERNAL_IPS',cast=Csv(), default='127.0.0.1')
 
 if DEBUG:
-    INSTALLED_APPS.append("debug_toolbar")
+    INSTALLED_APPS.append('debug_toolbar')
     MIDDLEWARE.insert(0,'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 # Database
@@ -174,6 +174,7 @@ if AWS_ACCESS_KEY_ID:
     # Upload Media Folder
     # ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ #
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
     DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
     MEDIA_URL = f'//s3.amazonws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'

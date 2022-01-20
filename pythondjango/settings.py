@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 #importando função do python partial
 import csv
+from email.policy import default
 from functools import partial
 import os
 
@@ -144,7 +145,7 @@ MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 COLLECTFAST_ENABLED = False
 
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=False)
 
 # ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ #
 # ▒▒▒▒▒▒▒▒▒▒▒▒▒▒ STORAGE CONFIGURATION IN S3 AWS ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ #

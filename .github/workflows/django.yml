@@ -33,8 +33,7 @@ jobs:
           installer-parallel: true
 
       - name: Install dependencies
-        run: poetry install
-             poetry env use 3.9 
+        run: poetry install 
 
       - name: Copy config .env
         run: cp contrib/env-sample .env  

@@ -17,11 +17,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-from pythondjango.base.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home')
+    path('', include('pythondjango.base.urls')),
 ]
 
 if settings.DEBUG:

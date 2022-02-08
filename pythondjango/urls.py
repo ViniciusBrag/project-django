@@ -21,6 +21,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pythondjango.base.urls')),
+    path('aperitivos/', include('pythondjango.aperitivos.urls')),
 ]
 
 if settings.DEBUG:

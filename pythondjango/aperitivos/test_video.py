@@ -8,8 +8,8 @@ def resp(client):
 def test_status_code(resp):
     assert resp.status_code == 200 
 
-def test_title_video(resp):
-    assert_contains(resp, '<h1>Vieo Aperitivo: Motivação</h1>')
+def test_titulo_video(resp):
+    assert_contains(resp, '<h1>Video Aperitivo: Motivação</h1>')
 
 
 def test_conteudo_video(resp):

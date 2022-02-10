@@ -1,6 +1,8 @@
 import pytest
 from django.urls import reverse
 from pythondjango.django_assertions import assert_contains
+
+
 @pytest.fixture
 def resp(client):
     return client.get(reverse('aperitivos:video', args=('motivacao',)))

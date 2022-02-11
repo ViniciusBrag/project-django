@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Python Pro </title>
+    <title> {% block title %}Python Pro{% endblock title %} </title>
 
-    <meta name="description" content="Página do curso Python Pro">
+    <meta name="description" content="{% block description%}Página do curso Python Pro{% endblock description %}">
     <meta name="author" content="Vinicius Braga">
     <link rel="icon" type="image/png" href="{% static 'img/favicon-pythonpro.png' %}"/>
 
@@ -17,11 +17,11 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-
-
 </head>
-<body>
 
+
+<!--Navbar da página-->
+<body>
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
@@ -34,8 +34,9 @@
         </div>
       </nav>    
 
+<!--Bloco principal da página-->
 
-
+{% block body %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -88,6 +89,7 @@
                     </ul>
                 </div>
             </nav>
+            <!--descrição do curso-->
             <div class="jumbotron">
                 <h2>
                     Curso de Python com Luciano Ramalho
@@ -118,6 +120,7 @@
                 </form>
             </div>
 
+            <!--Detalhes sobre o Luciano Ramalho-->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -139,13 +142,16 @@
         </div>
     </div>
 </div>
+{% endblock body %}
+
+<!--Rodapé-->
 <footer class="main-footer mt-5 pt-4 text-light">
     <div class="container">
         <div class="ow">
             <div class="col">
                 <h3>Entre em contato</h3>
                 <address>
-                    +55 12 997-411-854
+                    +55 12 997-411-855
                     <br/>
                     <a href="mailto:ramalho@python.pro.br" class="text-light">ramalho@python.pro.br</a>
                 </address>

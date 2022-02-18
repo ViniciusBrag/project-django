@@ -38,11 +38,11 @@ jobs:
       - name: Copy config .env
         run: cp contrib/env-sample .env  
 
-       - name: Rodar flake8
+      - name: Rodar flake8
         uses: py-actions/flake8@v1
         with:
           checkName: 'flake8_py3'   
-          
+
       - name: Test with pytest
         run:  poetry run pytest --cov='.' -v
 

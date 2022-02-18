@@ -8,7 +8,7 @@ AWS_SECRET_ACCESS_KEY =
 AWS_STORAGE_BUCKET_NAME =
 
 #setting django-debug-toolbar
-INTERNAL_IPS=127.0.0.1
+INTERNAL_IPS = 
 
 #app monitoration errors django
 SENTRY_DSN=

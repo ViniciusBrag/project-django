@@ -9,15 +9,19 @@ Aplicação disponível em https://pythonprojectdjango.herokuapp.com/
 [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&style=flat-square)](https://github.com/ViniciusBrag/project-django/actions)
 
 
+## <strong>Projeto utilizando Heroku</strong>
+##   <strong>Para conferir heroku</strong>
+```
+heroku --version
+``` 
 ### <strong>Projeto utilizando Poetry como gestor de dependências</strong>:
 [Poetry](https://python-poetry.org/)
 ### <strong>Instruções para instalação</strong>:
-#### Criar e ativar ambiente virtual com Poetry:
-
-```
-poetry shell
-```
 #### <strong>Instalar dependências</strong>:
 ```
 poetry install
+```
+### Criar e ativar ambiente virtual com Poetry:
+```
+poetry shell
 ```

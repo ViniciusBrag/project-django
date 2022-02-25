@@ -38,9 +38,6 @@ jobs:
       - name: Copy config .env
         run: cp contrib/env-sample .env  
 
-      - name: Test with pytest
-        run:  poetry run pytest --cov='.' -v
-
       - name: Send report to codecov.io
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}

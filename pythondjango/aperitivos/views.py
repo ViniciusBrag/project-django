@@ -1,8 +1,6 @@
-from msilib.schema import Class
-from multiprocessing import context
 from urllib import response
 from django.shortcuts import render
-from aperitivos.models import Video
+from pythondjango.aperitivos.models import Video
 
 
 videos = [
@@ -16,6 +14,6 @@ def indice(request):
     return render(request, 'aperitivos/indice.html', context={'videos': videos})
 
 def video(request, slug):
-    video = videos_dct[slug]
+    video = Video.objects.get(slug=slug)
     return render(request, 'aperitivos/video.html', context={'video': video})
 

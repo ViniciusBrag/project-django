@@ -10,6 +10,13 @@ def resp(client):
 def test_status_code(resp):
     assert resp.status_code == 200 
 
+@pytest.mark.parametrize(
+    'titulo',
+    [
+       'Video Aperitivo: Motivação',
+       'Instalação-windows'
+    ]
+)
 
 
 def test_titulo_video(resp, titulo):

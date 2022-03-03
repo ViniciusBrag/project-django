@@ -23,11 +23,11 @@ def resp_video_nao_encontrado(client, video):
     
 def test_status_code(resp):
     assert resp.status_code == 200 
-
+    
 
 def test_status_code_video_nao_encontrado(resp_video_nao_encontrado):
-    assert resp_video_nao_encontrado == 404
-    
+    assert resp_video_nao_encontrado.status_code == 404
+
     
 
 def test_titulo_video(resp, video):

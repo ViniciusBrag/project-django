@@ -39,7 +39,9 @@ jobs:
         run: cp contrib/env-sample .env  
 
       - name: Test with pytest
-        run:  poetry run pytest --cov=pythondjango
+        run: |
+          pytest pythondjango --nomigrations
+          pytest --cov=pythondjango
 
       - name: Send report to codecov.io
         env:

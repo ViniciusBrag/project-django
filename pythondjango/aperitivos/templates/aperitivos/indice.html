@@ -11,9 +11,9 @@
             <h1 class="mt-4 mb-3">Lista de videos de Aperitivos</h1>
             <ol>
                 {% for video in videos %}
-                    <li>{{ video.titulo}}</li>
-                    {% empty %}
-                        <li>Não foi encontrado nenhum vídeo de Aperitivo </li>
+                <li><a href="{{ video.get_absolute_url }}">{{ video.titulo }}</a></li>
+                {% empty %}
+                    <spam>Não foi encontrado nenhum vídeo de aperitivo</spam>
                 {% endfor %}
             </ol>
         </div>    

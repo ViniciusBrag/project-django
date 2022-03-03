@@ -63,14 +63,14 @@ python-versions = "*"
 
 [[package]]
 name = "boto3"
-version = "1.21.10"
+version = "1.21.11"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.6"
 
 [package.dependencies]
-botocore = ">=1.24.10,<1.25.0"
+botocore = ">=1.24.11,<1.25.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.5.0,<0.6.0"
 
@@ -79,7 +79,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.24.10"
+version = "1.24.11"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -364,15 +364,15 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "model-mommy"
-version = "2.0.0"
+name = "model-bakery"
+version = "1.4.0"
 description = "Smart object creation facility for Django."
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-django = ">=1.11.0"
+django = ">=2.2"
 
 [[package]]
 name = "packaging"
@@ -732,7 +732,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.9"
-content-hash = "b4ae9fc2eeb73f0d7438e807d84e051323bcfa5476d8f2fdedbdb5f99820850f"
+content-hash = "0dc1a893768fbb38f99b41d7f3c0bf0308ae89c3852a15e0d53e3c99fd55e5ca"
 
 [metadata.files]
 appnope = [
@@ -760,12 +760,12 @@ backcall = [
     {file = "backcall-0.2.0.tar.gz", hash = "sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"},
 ]
 boto3 = [
-    {file = "boto3-1.21.10-py3-none-any.whl", hash = "sha256:0122f8428a23efd29283c9ec92e7da1a8f35a69ddfd0635131cc5ca558723c4f"},
-    {file = "boto3-1.21.10.tar.gz", hash = "sha256:365156a9e55f08f2394e0bc84fc953f2a200f63adb08091c2ea06d7b025ea80b"},
+    {file = "boto3-1.21.11-py3-none-any.whl", hash = "sha256:bf5f6a8997ed11a66280ace67cc25ec31c28525940da91d309c3976a9955d4cf"},
+    {file = "boto3-1.21.11.tar.gz", hash = "sha256:f2cecf5d176f398a39bfde0008df83c03f2142b2be5eabe32bf104961df68810"},
 ]
 botocore = [
-    {file = "botocore-1.24.10-py3-none-any.whl", hash = "sha256:fc4bf1c71fabd84c35b7fb728268a6f9f491493e9ee7a5efb603425bfe8a0277"},
-    {file = "botocore-1.24.10.tar.gz", hash = "sha256:7429f6e54851d3f40fa9147ca1517f5f54101865ae4e79ba2095f580ff85333e"},
+    {file = "botocore-1.24.11-py3-none-any.whl", hash = "sha256:b29c2b5906d7f70782634bb8713c77e39f23aafc994bb2f7dccbeb2b36712adc"},
+    {file = "botocore-1.24.11.tar.gz", hash = "sha256:2af93de704f3122878a3233e7cf5de0b02f6c4c9fa993ca853b583f597bb1c38"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
@@ -894,9 +894,9 @@ mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
-model-mommy = [
-    {file = "model_mommy-2.0.0-py2.py3-none-any.whl", hash = "sha256:40d6e740aad7509e696a324b94cf2b0a104da93c3d4a7924cea1be3d0eb95b4f"},
-    {file = "model_mommy-2.0.0.tar.gz", hash = "sha256:3d332afce941c57f1990f45b083ba13252ba74fcd1ae43fd047e5af7a70fb312"},
+model-bakery = [
+    {file = "model_bakery-1.4.0-py2.py3-none-any.whl", hash = "sha256:a89befaae667380f5e2352981d45fed36747941f5c3e9dffa962fc6ba8d661d1"},
+    {file = "model_bakery-1.4.0.tar.gz", hash = "sha256:c29fb821c81cda2c37dfbdcb1dd2218cda179ecb96c6edb6cd9cdaa146706d92"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},

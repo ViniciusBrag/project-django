@@ -40,8 +40,8 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pytest pythondjango --nomigrations
-          pytest --cov=pythondjango
+          poetry run pytest pythondjango --nomigrations
+          poetry run pytest --cov=pythondjango
 
       - name: Send report to codecov.io
         env:

@@ -76,14 +76,14 @@
                             <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                               data-toggle="dropdown">Dropdown link</a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another
-                                action</a> <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider">
-                                </div>
-                                <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Módulos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% for modulo in MODULOS %}
+                                <a class="dropdown-item" href="#">{{modulo.titulo}}</a>
+                                <div class="dropdown-divider"></div>
+                                {% endfor %}
                             </div>
                         </li>
                     </ul>
@@ -121,25 +121,6 @@
             </div>
             <br>
             <br>
-            <!--Detalhes sobre o Luciano Ramalho-->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <h6 class="card-header mt-n2">
-                            Mais detalhes sobre o instrutor
-                        </h6>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <img src="{% static 'img/luciano-ramalho.png' %}" alt="Foto de luciano Ramalho" class="img-thumbnail float-start me-3"/>
-                                Ramalho é sócio e professor na <a href="https://www.python.pro.br">Python Pro</a> e autor do Livro <a href="https://www.amazon.com.br/Python-Fluente-Programa%C3%A7%C3%A3o-Concisa-Eficaz/dp/857522462X" target="_blank">Python Fluente</a>
-                                Foi diretor técnico do Brasil Online, primeiro portal da Abril S/A na Web. Liderou times para os portais IDG Now, BOL, UOL, AOL Brasil e outros, usando Python desde 1998. Como instrutor, atendeu clientes como Citibank, CPqD, Serpro, Presidência da República, Globo.com e Itaú. Palestrante em eventos internacionais como FISL, PyCon US e OSCON. Ajudou a criar a Associação Python Brasil e foi seu presidente. É membro da Python Software Foundation e fundador do Garoa Hacker Clube, o primeiro hackerspace do Brasil.
-
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

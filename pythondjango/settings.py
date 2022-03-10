@@ -12,15 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 #importando função do python partial
 import csv
+import os
 from email.policy import default
 from functools import partial
-import os
-
-from typing import cast
-from decouple import Csv, config
 from pathlib import Path
+from typing import cast
+
 import dj_database_url
 import sentry_sdk
+from decouple import Csv, config
 from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "collectfast",
     'pythondjango.base',
-    'pythondjango.aperitivos'
+    'pythondjango.aperitivos',
+    'pythondjango.modulos',
 
 ]
 
@@ -77,6 +78,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pythondjango.modulos.context_processors.listar_modulos',
+                
             ],
         },
     },

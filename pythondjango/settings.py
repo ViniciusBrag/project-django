@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'pythondjango.base',
     'pythondjango.aperitivos',
     'pythondjango.modulos',
+    'ordered_model',
 
 ]
 

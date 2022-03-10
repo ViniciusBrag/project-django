@@ -1,6 +1,5 @@
 import pytest
-from django.test import Client
-from django.urls import reverse
+from django.urls.base import reverse
 from model_bakery import baker
 from pythondjango.django_assertions import assert_contains
 from pythondjango.modulos.models import Modulo
@@ -20,4 +19,5 @@ def resp(client, modulos):
 def test_titulo_modulos(resp, modulos):
     for modulo in modulos:
         assert_contains(resp, modulo.titulo)
+    
     

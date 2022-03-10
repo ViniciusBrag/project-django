@@ -1,6 +1,5 @@
 import pytest
-from django.test import Client
-from django.urls import reverse
+from django.urls.base import reverse
 from pythondjango.django_assertions import assert_contains
 
 
@@ -14,7 +13,7 @@ def test_status_code(resp):
 
 
 def test_title(resp):
-    assert_contains(resp, '<title> Python Pro - Home </title>')
+    assert_contains(resp, '<title>Python Pro - Home</title>')
 
 
 def test_link(resp):

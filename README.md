@@ -15,6 +15,7 @@ Aplicação disponível em https://pythonprojectdjango.herokuapp.com/
 heroku --version
 ``` 
 ### <strong>Projeto utilizando Poetry como gestor de dependências</strong>:
+Site respectivo:
 [Poetry](https://python-poetry.org/)
 ### <strong>Instruções para instalação</strong>:
 #### <strong>Instalar dependências</strong>:
@@ -25,3 +26,10 @@ poetry install
 ```
 poetry shell
 ```
+
+### Para conferir a qualidade do código:
+
+```
+flake8 .
+```
+

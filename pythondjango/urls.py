@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pythondjango.base.urls')),
     path('aperitivos/', include('pythondjango.aperitivos.urls')),
-    #path('modulos/', include('pythondjango.modulos.urls')),
+    path('modulos/', include('pythondjango.modulos.urls')),
 ]
 
 if settings.DEBUG:

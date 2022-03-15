@@ -15,7 +15,13 @@
                 <!--Para descrição-->
                 <dt>Descrição</dt>
                 <dd>{{ modulo.descricao }}</dd>
-            </dl>       
+            </dl>
+            <h2>Aulas</h2>
+            <ol>
+                {% for aula in aulas %}
+                    <li>{{ aula.titulo }}</li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 </div>

@@ -2,16 +2,19 @@ import pytest
 from django.urls.base import reverse
 from model_bakery import baker
 from pythondjango.django_assertions import assert_contains
-from pythondjango.modulos.models import Modulo
+from pythondjango.modulos.models import Aula, Modulo
 
 
 @pytest.fixture
 def modulo(db):
     return baker.make(Modulo)
 
+@pytest.fixture
+def aulas(modulo):
+    return baker.make(Aula, 3, modulo=modulo)
 
 @pytest.fixture
-def resp(client, modulo):
+def resp(client, modulo, aulas):
     resp = client.get(reverse('modulos:detalhe', kwargs={'slug': modulo.slug}))
     return resp 
     
@@ -25,3 +28,7 @@ def test_descricao(resp, modulo:Modulo):
 
 def test_publico(resp, modulo:Modulo):
     assert_contains(resp, modulo.publico)
+
+def test_aulas_titulos(resp, aulas):
+    for aula in aulas:
+        assert_contains(resp, aula.titulo)

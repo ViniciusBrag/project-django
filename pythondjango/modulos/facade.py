@@ -1,6 +1,6 @@
 from typing import List
 
-from pythondjango.modulos.models import Modulo
+from pythondjango.modulos.models import Aula, Modulo
 
 
 def listar_modulos_ordenados() -> List[Modulo]:  
@@ -14,3 +14,6 @@ def encontrar_modulo(slug:str) -> Modulo:
 def listar_aulas_de_modulo_ordenadas(modulo:Modulo):
     return list(modulo.aula_set.order_by('order').all())
 
+
+def encontrar_aula(slug):
+    return Aula.objects.get(slug=slug)

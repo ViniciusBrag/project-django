@@ -25,6 +25,7 @@ model-bakery = "^1.4.0"
 black = "^22.1.0"
 pylint = "^2.12.2"
 django-ordered-model = "^3.5"
+django-extensions = "^3.1.5"
 
 [tool.poetry.dev-dependencies]
 

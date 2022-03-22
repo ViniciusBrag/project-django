@@ -4,7 +4,15 @@
 <title> {% block title %}Python Pro - Aperitivo{% endblock title %} </title>
 <meta name="description" content="{% block description%}Página de video gratuido do Python Pro{% endblock description %}">
 
-{% block body%}
+{% block body%}    
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ aula.modulo.get_absolute_url }}">{{aula.modulo.titulo}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{aula.titulo}}</li>
+        </ol>
+    </nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">

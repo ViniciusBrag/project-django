@@ -1,27 +1,27 @@
-% extends 'base/base.html' %}
+{% extends 'base/base.html' %}
 {% load static %}
-
-<title> {% block title %}Python Pro - Aperitivo{% endblock title %} </title>
-<meta name="description" content="{% block description%}Página de video gratuido do Python Pro{% endblock description %}">
-
-{% block body%}    
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ aula.modulo.get_absolute_url }}">{{aula.modulo.titulo}}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{aula.titulo}}</li>
-        </ol>
-    </nav>
-
+{% block title %}{{modulo.titulo}}{% endblock title %}
+{% block description %}Página com detalhes do módulo {{modulo.titulo}}{% endblock description %}
+{% block body %}
 <div class="container">
+{% for modulo in modulos %}
     <div class="row">
         <div class="col-md-12">
-            <h1 style="margin-bottom:5%;margin-top:5%">{{ aula.titulo | default:"Faltando título" }}</h1>
-                <iframe src="https://player.vimeo.com/video/{{ aula.vimeo_id }}" width="1000" height="562"
-                        frameborder="5" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <h1 class="mt-4 mb-3">{{ modulo.titulo }}</h1>
+            <dl>
+                <dt>Público</dt>
+                <dd>{{ modulo.publico }}</dd>
+                <dt>Descrição</dt>
+                <dd>{{ modulo.descricao }}</dd>
+            </dl>
+            <h2>Aulas</h2>
+            <ol>
+                {% for aula in modulo.aulas %}
+                <li><a href="{{ aula.get_absolute_url }}">{{ aula.titulo }}</a></li>
+                {% endfor %}
+            </ol>
         </div>
+    </div>
+{% endfor %}
 </div>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-{% endblock body%}
-
+{% endblock body %}

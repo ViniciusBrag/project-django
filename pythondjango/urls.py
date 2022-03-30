@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('pythondjango.base.urls')),
     path('aperitivos/', include('pythondjango.aperitivos.urls')),
     path('modulos/', include('pythondjango.modulos.urls')),
+    path('turmas/', include('pythondjango.turmas.urls')),
 ]
 
 if settings.DEBUG:

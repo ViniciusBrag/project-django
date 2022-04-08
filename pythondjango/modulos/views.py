@@ -15,3 +15,4 @@ def detalhe(request, slug):
 def aula(request, slug):
     aula = facade.encontrar_aula(slug)
     return render(request, 'modulos/aula_detalhe.html', {'aula': aula})
+

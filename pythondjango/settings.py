@@ -46,6 +46,10 @@ LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
+    'pythondjango.base',
+    'pythondjango.aperitivos',
+    'pythondjango.modulos',
+    'pythondjango.turmas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,10 +57,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "collectfast",
-    'pythondjango.base',
-    'pythondjango.aperitivos',
-    'pythondjango.modulos',
-    'pythondjango.turmas',
     'ordered_model',
     'django_extensions',
 

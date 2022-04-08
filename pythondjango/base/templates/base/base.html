@@ -52,7 +52,9 @@
                         {{ user.first_name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <button type="button" class="dropdown-item"> Sair </button>
+                        <div class="dropdown-item">
+                            <a class="btn btn-danger" href=" {% url 'logout' %}"> Sair </a>
+                        </div>    
                     </ul>
                 </li>
             </ul>

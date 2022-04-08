@@ -14,7 +14,7 @@ def usuario_logado(db, django_user_model):
     Returns:
         Retorna o usuário criado dentro do banco de dados
     """
-    usuario_modelo_criado = baker.make(django_user_model)
+    usuario_modelo_criado = baker.make(django_user_model, first_name='Fulano')
     return usuario_modelo_criado 
 
 @pytest.fixture

@@ -92,6 +92,16 @@ TEMPLATES = [
     },
 ]
 
+# configuração de envio de email
+EMAIL_BACKEND= config('EMAIL_BACKEND')
+EMAIL_HOST= config('EMAIL_HOST')
+EMAIL_PORT= config('EMAIL_PORT')
+EMAIL_HOST_USER= config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS= config('EMAIL_USE_TLS')
+EMAIL_FROM_EMAIL = config('EMAIL_FROM_EMAIL')
+
+
 WSGI_APPLICATION = 'pythondjango.wsgi.application'
 
 #setting of variable debug-toolbar
